@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8">
+    <title>To Do list</title>
+    <!-- Fontawesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
+    <!-- Google font -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <!-- hendelbars -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.6/handlebars.js"></script>
+    <!-- JQuery CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- My style css -->
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <!-- Begin wrapper -->
+    <div class="wrapper">
+
+      <div class="del-task-message">
+        <h3>task deleted</h3>
+      </div>
+
+      <!-- Begin insert task block -->
+      <div class="insert-task">
+        <h2>Insert task to do</h2>
+        <input type="text" placeholder="Inserisci compito">
+        <button class="insert-task-btn">Insert task</button>
+        <p class="empty-string-error "> ERRORE: devi inserire qualcosa</p>
+      </div>
+      <!-- End insert task block -->
+
+      <!-- Begin TO DO list -->
+      <div class="to-do">
+        <h2>TODO list:</h2>
+        <ul class="lista-to-do">
+          <!-- task list goes here -->
+        </ul>
+      </div>
+      <!-- End TO DO list -->
+
+    </div>
+    <!-- END wrapper -->
+
+    <!-- hendelbars tamplate -->
+    <script id="list-item-template" type="text/x-handlebars-template">
+      <li data-id="{{id}}">
+        {{text}}
+        <span class="del-task">
+          <i class="fas fa-times"></i>
+        </span>
+      </li>
+    </script>
+    <script src="script.js"></script>
+  </body>
+</html>

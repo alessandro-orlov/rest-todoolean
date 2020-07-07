@@ -1,0 +1,72 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+
+/* GENERAL */
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 15px;
+}
+h2 {
+  margin: 0 0 10px;
+}
+.wrapper {
+  width: 100%;
+  max-width: 970px;
+  margin: 15px auto;
+  box-shadow: 3px 3px 12px 5px #ccc;
+  min-height: 700px;
+  position: relative;
+}
+.wrapper::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+.insert-task,
+.to-do {
+  padding: 20px;
+  float: left;
+  height: 100%;
+  width: 50%;
+}
+.insert-task input,
+.insert-task button {
+  padding: 5px 10px;
+}
+.to-do ul {
+  margin-left: 20px;
+}
+.to-do ul > li {
+  margin-bottom: 10px;
+}
+.del-task i {
+  color: red;
+}
+.del-task-message {
+  position: absolute;
+  top: 35%;
+  left: -100%;
+  transform: translate(-50%, -50%);
+  color: red;
+  text-transform: uppercase;
+  transition: left 1s ease-in-out;
+}
+.active {
+  left:50%;
+}
+.empty-string-error {
+  display: none;
+  color: red;
+}
+/* ERROR */
+.insert-task input.error {
+  border: 1px solid red;
+}
+.visible {
+  display: block;
+}
