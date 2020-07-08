@@ -4,6 +4,7 @@ $(document).ready(
     // Mostro la lista al caricamento della pagina
     getList();
 
+
     // ================= BUTTON CLICK ==========================
     // Al click Prendiamo il valore del campo input e lo appendiamo alla lista to do
     $('button.insert-task-btn').click(
@@ -121,12 +122,14 @@ $(document).ready(
 
       resetList();
 
+      // Compilo il tamplate
+      // Fuori dal ciclo per risparmiare le risorse
+      var source = $('#list-item-template').html();
+      var template = Handlebars.compile(source);
+
+
       for (var i = 0; i < taskArray.length; i++) {
         var singleTask = taskArray[i]
-
-        // Compilo il tamplate
-        var source = $('#list-item-template').html();
-        var template = Handlebars.compile(source);
 
         var context = {
           id: singleTask.id,
